@@ -28,9 +28,10 @@ const LiveQueryView = () => {
     const [liveQueryResults, setLiveQueryResults] = useState({})
     const [isQuerying, setIsQuerying] = useState(false)
 
-    useEffect(() => {
+    useEffect(() =>
         runLiveQuery(liveQuery)
-    }, [liveQueryType])
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    , [liveQueryType])
 
     const runLiveQuery = async (query) => {
         if (query.trim() === '') return
@@ -120,7 +121,7 @@ const LiveQueryView = () => {
                        onChange={e => {setLiveQuery(e.target.value); setLiveQueryResults({})} }/>
             </fieldset>
             <fieldset>
-                <button className='live-query--search-button' onClick={(e) => runLiveQuery(liveQuery)}>Search</button>
+                <button className='live-query--search-button' onClick={() => runLiveQuery(liveQuery)}>Search</button>
             </fieldset>
         </form>
         <main>

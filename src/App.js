@@ -46,6 +46,7 @@ function App() {
     const [selectedSource, setSelectedSource] = useState(sources[0])
     const [currentSourceStats, setCurrentSourceStats] = useState({})
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => { loadSource() }, [])
 
     const loadSource = async () => {
