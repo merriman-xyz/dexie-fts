@@ -10,11 +10,11 @@ These methods search over raw text with regex. Viable on small datasets. Become 
 
 **Naive Filter Collection with Regex to Array**
 
-  - Slowest method. Filters the collection with Dexie's `table.filter` method with regex over raw text. Misses non-exact matches.
+  - Slowest method. Filters the collection with Dexie's `table.filter` method with regex over raw text. Misses close matches.
 
 **Naive Collection to Array, then Filter with Regex**
 
-  - Slight improvement over previous. Converts Dexie table to array and then uses JavaScript's native `filter` method. 
+  - Slight improvement over previous. Converts Dexie table to array and then uses JavaScript's native `filter` method. Misses close matches.
 
 ## Tokenized Search 
 
