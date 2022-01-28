@@ -81,7 +81,7 @@ function App() {
                 <div> Current Source: <br/> <h2>{currentSource.title} </h2></div>
                 <header>
                     {generateStats()}
-                    <fieldset className='select-current-source'>
+                    <fieldset className='app--select-current-source'>
                         <legend>Select new source</legend>
                         <SelectCurrentSource disabled={!sourceLoaded} currentSource={selectedSource}
                                              setCurrentSource={setSelectedSource}/>
