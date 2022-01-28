@@ -18,7 +18,7 @@ These methods search over raw text with regex. Viable on small datasets. Become 
 
 ## Tokenized Search 
 
-These methods search over indexed tokens. Text is first normalized and then tokenized with various methods. Results are slightly fuzzier. These are fast enough to handle live search on large-ish datasets (10000+ records).  Misses non-exact matches.
+These methods search over indexed tokens. Text is first normalized and then tokenized with various methods. Results are slightly fuzzier. These are fast enough to handle live search on large-ish datasets (10000+ records).  Misses close matches.
 
 **Plain Tokens**
 
