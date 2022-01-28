@@ -16,6 +16,11 @@ const sources = [
         title: 'War and Peace',
         size: 'Large',
         url: 'https://raw.githubusercontent.com/mmcky/nyu-econ-370/master/notebooks/data/book-war-and-peace.txt'
+    },
+    {
+        title: 'Structure and Interpretation of Computer Programs',
+        size: 'Large',
+        url: 'https://gist.githubusercontent.com/merriman-xyz/56c7f7425ad71e9f3cf5195fc45c4ff6/raw/d88770748f244984c17660a181068b01145b115d/sicp.txt'
     }
 ]
 
@@ -41,10 +46,7 @@ function App() {
     const [selectedSource, setSelectedSource] = useState(sources[0])
     const [currentSourceStats, setCurrentSourceStats] = useState({})
 
-    useEffect(() => {
-        loadSource()
-
-    }, [])
+    useEffect(() => { loadSource() }, [])
 
     const loadSource = async () => {
         setSourceLoaded(false)
@@ -69,11 +71,13 @@ function App() {
     const generateMain = () => {
         if (!sourceLoaded) {
             return <>
+                <div> Current Source: <br/> <h2>{selectedSource.title} </h2></div>
                 <div>Loading <em>{selectedSource.title}</em>:</div>
                 <div>{loadingProgress}</div>
             </>
         } else {
             return <>
+                <div> Current Source: <br/> <h2>{currentSource.title} </h2></div>
                 <header>
                     {generateStats()}
                     <fieldset className='select-current-source'>
@@ -97,8 +101,8 @@ function App() {
                 </div>
 
                 <Routes>
-                    <Route path='/FTSTest' element={<FTSTestView/>}/>
                     <Route path='/liveQuery' element={<LiveQueryView/>}/>
+                    <Route path='/FTSTest' element={<FTSTestView/>}/>
                 </Routes>
             </>
         }
@@ -109,7 +113,6 @@ function App() {
         <div id='APP'>
             <header>
                 <h1>IndexedDB (Dexie) Full-Text-Search Testing</h1>
-                <div> Current Source: <br/> <h2>{currentSource.title} </h2></div>
             </header>
             <main>
                 {generateMain()}
