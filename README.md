@@ -32,6 +32,6 @@ These methods search over indexed tokens. Text is first normalized and then toke
 
   - Tokens are soundex-ed after normalization. Gives fuzzy results. Matches can seem odd. 
 
-**Stemmed Soundexed Tokens *
+**Stemmed Soundexed Tokens**
 
   - Tokens are stemmed and then soundexed. Generally similar to soundex-ed search method. Gives fuzzy results. Matches can seem odd.
