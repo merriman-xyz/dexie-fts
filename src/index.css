@@ -115,3 +115,30 @@ button {
 .align-right{
     text-align: right;
 }
+
+
+@media{
+
+}
+
+tbody tr{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+table thead {
+    display: none;
+}
+
+@media screen and (min-width: 600px){
+    tbody tr{
+        display: table-row;
+        text-align: left;
+    }
+
+    table thead{
+       display: table-header-group;
+    }
+
+}

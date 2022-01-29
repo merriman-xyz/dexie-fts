@@ -3,10 +3,12 @@ import {runFTSTest} from "../databaseFTS";
 
 const FTSTestResultTable = ({query, queryResults}) => {
     return <div className='fts-test--result-table'>
+        <h2>Test Results</h2>
+        <br/>
         <table>
             <thead>
             <tr>
-                <th>Query Type</th>
+                <th></th>
                 <th>Execution Time (ms)</th>
                 <th>Result Count</th>
                 <th>Actual Query</th>
@@ -14,9 +16,9 @@ const FTSTestResultTable = ({query, queryResults}) => {
             </thead>
             <tbody>
             {queryResults.map((result) => <tr key={result.type}>
-                <td>{result.type}</td>
+                <th>{result.type}</th>
                 <td>{result.query_time} ms</td>
-                <td>{result.queryResults_length}</td>
+                <td>{result.queryResults_length} matches</td>
                 <td>{result.queryProcessed}</td>
             </tr>)}
             </tbody>
